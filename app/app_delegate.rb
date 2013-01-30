@@ -1,5 +1,6 @@
 class AppDelegate
   def application(application, didFinishLaunchingWithOptions:launchOptions)
+    puts "test"
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
 
     storyboard = UIStoryboard.storyboardWithName("iphone", bundle:nil)
