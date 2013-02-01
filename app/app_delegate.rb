@@ -3,10 +3,9 @@ class AppDelegate
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
 
-    url = NSURL.URLWithString("http://example_server.dev")
+    url = NSURL.URLWithString("http://localhost:3000")
     self.backend = RKObjectManager.managerWithBaseURL(url)
-    add_mapping(person_mapping, "person")
-    add_mapping(person_mapping, "people")
+    add_mapping(session_mapping, "session")
 
     puts "test"
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
@@ -23,11 +22,12 @@ class AppDelegate
     true
   end
 
-  def person_mapping
-    @person_mapping ||= begin
-      mapping = RKObjectMapping.mappingForClass(Person)
-      mapping.addAttributeMappingsFromDictionary(id: "remote_id",
-                                                 name: "name")
+  def session_mapping
+    @session_mapping ||= begin
+      mapping = RKObjectMapping.mappingForClass(Session)
+      mapping.addAttributeMappingsFromDictionary(desc: "desc")
+      mapping.addAttributeMappingsFromDictionary(title: "title")
+      mapping.addAttributeMappingsFromDictionary(presentation: "presentation")
     end
   end
 

@@ -2,11 +2,11 @@ class AgendaViewController < UIViewController
   attr_accessor :dataSource
 
   def viewDidAppear(animated)
-    App.delegate.backend.getObjectsAtPath("/people",
+    App.delegate.backend.getObjectsAtPath("/api/session",
                                           parameters: nil,
                                           success: lambda do |operation, result|
-                                            @people = result.array
-                                            self.dataSource = @people
+                                            @session = result.array
+                                            self.dataSource = @session
                                             self.view.reloadData
                                           end,
                                           failure: lambda do |operation, error|
@@ -15,8 +15,8 @@ class AgendaViewController < UIViewController
   end
 
   # RestKit callback
-  def objectLoader(object_loader, didLoadObjects:people)
-    @people = people
+  def objectLoader(object_loader, didLoadObjects:session)
+    @session = session
     self.view.reloadData
   end
 
@@ -50,9 +50,9 @@ class AgendaViewController < UIViewController
   def viewDidLoad
     super
 
-    @people = []
+    @session = []
     #self.dataSource = ("A".."Z").to_a
-    self.dataSource = @people
+    self.dataSource = @session
 
     self.title= "Agenda"
   end
