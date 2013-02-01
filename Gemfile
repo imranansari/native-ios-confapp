@@ -1,5 +1,6 @@
-# A sample Gemfile
-source "https://rubygems.org"
+source :rubygems
 
-gem 'ib'
-gem 'rake'
+gem "rake"
+gem 'motion-cocoapods'
+gem 'bubble-wrap'
+gem "ib"
