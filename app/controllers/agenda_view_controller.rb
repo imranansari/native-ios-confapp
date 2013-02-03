@@ -12,6 +12,10 @@ class AgendaViewController < UIViewController
                                           failure: lambda do |operation, error|
                                             puts error.localizedDescription
                                           end)
+
+    self.navigationController.navigationBar.styleId = "nav_bar"
+    self.title = "Agenda"
+
   end
 
   # RestKit callback
@@ -39,8 +43,9 @@ class AgendaViewController < UIViewController
   end
 
   def prepareForSegue(segue, sender:sender)
-    puts "#{self.to_s}: CustomViewController1::prepareForSegue '#{segue.identifier}'"
-
+    row = self.view.indexPathForSelectedRow.row
+    selectedSession = @session[row]
+    segue.destinationViewController.model = selectedSession
   end
 
   def tableView(tv, heightForRowAtIndexPath:indexPath)
