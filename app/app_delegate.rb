@@ -7,7 +7,7 @@ class AppDelegate
     self.backend = RKObjectManager.managerWithBaseURL(url)
     add_mapping(session_mapping, "session")
 
-    puts "test"
+    puts "test12"
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
 
     storyboard = UIStoryboard.storyboardWithName("iphone", bundle:NSBundle.mainBundle)
