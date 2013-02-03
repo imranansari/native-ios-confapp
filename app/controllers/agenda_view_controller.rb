@@ -16,6 +16,7 @@ class AgendaViewController < UIViewController
     self.navigationController.navigationBar.styleId = "nav_bar"
     self.title = "Agenda"
 
+    #CYAlert.show
   end
 
   # RestKit callback

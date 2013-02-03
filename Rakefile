@@ -23,11 +23,23 @@ Motion::Project::App.setup do |app|
 
   app.pods do
     pod 'RestKit', git: 'https://github.com/RestKit/RestKit.git', branch: 'development'
+    pod 'SDSegmentedControl', git: 'https://github.com/rs/SDSegmentedControl.git', tag: '1.0.0'
   end
+
+
+  app.frameworks += %w(QuartzCore)
 
   ##Pixate
   app.pixate.user = 'imran.iansari@gmail.com'
   app.pixate.key  = '1MKTV-N0RC1-LLAG4-14GFO-2OLVI-H8HQD-LIP5E-679D0-HCSLN-UKUTV-0N6LR-L189N-O4NSQ-2LBRP-PGTBE-KK'
   app.pixate.framework = 'vendor/PXEngine.framework'
+
+  ##Bridge
+  app.vendor_project('vendor/CYAlert', :static)
+
+=begin
+  app.vendor_project('vendor/SDSegmentedControl', :static)
+=end
+
 
 end
