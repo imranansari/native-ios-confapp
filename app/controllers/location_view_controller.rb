@@ -1,40 +1,19 @@
 class LocationViewController < UIViewController
-
-  attr_reader :timer
+  include MapKit
 
   def viewDidLoad
-    margin = 20
-
-    @state = UILabel.new
-    @state.font = UIFont.systemFontOfSize(30)
-    @state.text = 'Tap to start'
-    @state.textAlignment = UITextAlignmentCenter
-    @state.textColor = UIColor.whiteColor
-    @state.backgroundColor = UIColor.clearColor
-    @state.frame = [[margin, 200], [view.frame.size.width - margin * 2, 40]]
-    view.addSubview(@state)
-
-    @action = UIButton.buttonWithType(UIButtonTypeRoundedRect)
-    @action.setTitle('Start', forState:UIControlStateNormal)
-    @action.setTitle('Stop', forState:UIControlStateSelected)
-    @action.addTarget(self, action:'actionTapped', forControlEvents:UIControlEventTouchUpInside)
-    @action.frame = [[margin, 260], [view.frame.size.width - margin * 2, 40]]
-    view.addSubview(@action)
-  end
-
-  def actionTapped
-    if @timer
-      @timer.invalidate
-      @timer = nil
-    else
-      @duration = 0
-      @timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target:self, selector:'timerFired', userInfo:nil, repeats:true)
-    end
-    @action.selected = !@action.selected?
-  end
-
-  def timerFired
-    @state.text = "%.1f" % (@duration += 0.1)
+    self.view = UIView.alloc.initWithFrame(tabBarController.view.bounds)
+    map = MapView.new
+    map.frame = self.view.frame
+    map.delegate = self
+    region = CoordinateRegion.new([56, 10.6], [3.1, 3.1])
+    map.region = region
+    # Alternatively use set_region
+    # map.set_region(region, :animated => true)
+    map.showsUserLocation = true
+    self.view.addSubview(map)
+    #map.set_zoom_level = 3
+    map.shows_user_location = true
   end
 
 end

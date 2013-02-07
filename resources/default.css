@@ -43,3 +43,7 @@
     border-width    : 1px;
     border-color    : rgb(192,193,194);
 }
+
+#bio {
+    color: red;
+}

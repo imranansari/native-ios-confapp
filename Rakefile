@@ -2,6 +2,7 @@ $:.unshift("/Library/RubyMotion/lib")
 
 require 'motion/project'
 require 'motion-pixate'
+require 'map-kit-wrapper'
 
 require 'bundler'
 
@@ -24,6 +25,7 @@ Motion::Project::App.setup do |app|
   app.pods do
     pod 'RestKit', git: 'https://github.com/RestKit/RestKit.git', branch: 'development'
     pod 'SDSegmentedControl', git: 'https://github.com/rs/SDSegmentedControl.git', tag: '1.0.0'
+    pod 'SDWebImage'
   end
 
 

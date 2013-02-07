@@ -8,7 +8,7 @@
         <scene sceneID="8HH-tm-sd8">
             <objects>
                 <navigationController definesPresentationContext="YES" id="UZF-Ab-Qpy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Agenda" id="QEW-qS-nf8"/>
+                    <tabBarItem key="tabBarItem" title="Agenda" image="83-calendar.png" id="QEW-qS-nf8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YlL-2e-ZvD">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -36,7 +36,6 @@
                                         <segment title="Mon 7-1"/>
                                         <segment title="Tue1-8"/>
                                         <segment title="Wed 1-9"/>
-                                        <segment title="Thu 1-10"/>
                                     </segments>
                                 </segmentedControl>
                             </subviews>
@@ -61,7 +60,7 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10-12 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOu-au-axj">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="82" id="78M-Ij-Ewn"/>
+                                                <constraint firstAttribute="width" constant="110" id="ofz-gl-hUe"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,10 +69,10 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="JOu-au-axj" firstAttribute="baseline" secondItem="LA7-e0-XDq" secondAttribute="baseline" type="default" id="0Ix-G6-NKJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="JOu-au-axj" secondAttribute="trailing" constant="40" id="2A6-np-G9q"/>
                                     <constraint firstItem="LA7-e0-XDq" firstAttribute="top" secondItem="UPt-w1-sgZ" secondAttribute="top" constant="29" id="I3N-j2-GL8"/>
-                                    <constraint firstItem="JOu-au-axj" firstAttribute="leading" secondItem="LA7-e0-XDq" secondAttribute="leading" type="default" id="Kz1-07-Dhs"/>
                                     <constraint firstItem="LA7-e0-XDq" firstAttribute="leading" secondItem="UPt-w1-sgZ" secondAttribute="leading" constant="5" id="PWz-2k-NwY"/>
-                                    <constraint firstAttribute="bottom" secondItem="JOu-au-axj" secondAttribute="bottom" constant="21" id="XEZ-2E-txZ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleId" value="listTableCell"/>
@@ -109,26 +108,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKV-pK-zBR">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Hello">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="styleId" value="button1"/>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="OKV-pK-zBR" secondAttribute="bottom" constant="92" id="75z-Qt-c3Y"/>
-                            <constraint firstItem="b1M-Th-ffK" firstAttribute="leading" secondItem="Pu1-Cg-R3m" secondAttribute="leading" constant="124" id="LTw-tU-Vl3"/>
-                            <constraint firstItem="b1M-Th-ffK" firstAttribute="top" secondItem="Pu1-Cg-R3m" secondAttribute="top" constant="77" id="l7O-tZ-8Md"/>
-                            <constraint firstItem="OKV-pK-zBR" firstAttribute="leading" secondItem="Pu1-Cg-R3m" secondAttribute="leading" constant="103" id="nNs-EV-fbR"/>
+                            <constraint firstItem="b1M-Th-ffK" firstAttribute="top" secondItem="Pu1-Cg-R3m" secondAttribute="top" constant="20" symbolic="YES" type="default" id="148-O7-Laj"/>
+                            <constraint firstItem="b1M-Th-ffK" firstAttribute="leading" secondItem="Pu1-Cg-R3m" secondAttribute="leading" constant="15" id="idq-m8-x6A"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Session Detail" id="m2r-8z-8gH">
@@ -203,11 +187,128 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Location" id="SGJ-hS-5Xi"/>
+                    <tabBarItem key="tabBarItem" title="Location" image="103-map.png" id="SGJ-hS-5Xi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15N-hL-IJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="613" y="566"/>
+        </scene>
+        <!--Speakers View Controller - Speakers-->
+        <scene sceneID="Twf-kc-i5I">
+            <objects>
+                <tableViewController id="Sgs-qL-uCy" customClass="SpeakersViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="101" sectionHeaderHeight="22" sectionFooterHeight="22" id="LXp-J0-MaB">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ParticipantCell" editingAccessoryType="disclosureIndicator" rowHeight="101" id="x6d-GM-OHk" customClass="ParticipantViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="101"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Speaker Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hA-tI-UED">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glT-ot-iU1">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="52" id="daX-cI-VpH"/>
+                                                <constraint firstAttribute="height" constant="44" id="jfw-xO-2uK"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="8hA-tI-UED" firstAttribute="leading" secondItem="x6d-GM-OHk" secondAttribute="leading" constant="76" id="Js5-To-MRk"/>
+                                    <constraint firstItem="8hA-tI-UED" firstAttribute="centerY" secondItem="glT-ot-iU1" secondAttribute="centerY" type="default" id="WcO-gL-7gm"/>
+                                    <constraint firstItem="glT-ot-iU1" firstAttribute="leading" secondItem="x6d-GM-OHk" secondAttribute="leading" constant="6" id="hMU-Nm-WUb"/>
+                                    <constraint firstItem="8hA-tI-UED" firstAttribute="top" secondItem="x6d-GM-OHk" secondAttribute="top" constant="20" type="default" id="jVk-XP-41o"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleId" value="listTableCell"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="participant_name_label" destination="8hA-tI-UED" id="dof-nV-T8G"/>
+                                    <outlet property="participant_pic" destination="glT-ot-iU1" id="V9y-tl-pjo"/>
+                                    <segue destination="MJD-Wn-QEt" kind="push" id="x9T-rY-b02"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Sgs-qL-uCy" id="m6N-Ka-8cg"/>
+                            <outlet property="delegate" destination="Sgs-qL-uCy" id="J0Q-wk-0Ku"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Speakers" id="Sel-ye-6mf"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mgH-eq-os7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="370" y="1515"/>
+        </scene>
+        <!--Speaker Detail Controller - Speaker Detail-->
+        <scene sceneID="x6S-47-wxp">
+            <objects>
+                <viewController id="MJD-Wn-QEt" customClass="SpeakerDetailController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GIo-CT-GpZ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQM-gP-d2v">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlZ-9I-Qjb">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="styleId" value="bio"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="XlZ-9I-Qjb" secondAttribute="trailing" constant="208" id="IVB-Hj-drN"/>
+                                    <constraint firstAttribute="bottom" secondItem="XlZ-9I-Qjb" secondAttribute="bottom" constant="221" id="P7L-lQ-TwD"/>
+                                    <constraint firstItem="XlZ-9I-Qjb" firstAttribute="top" secondItem="IQM-gP-d2v" secondAttribute="top" constant="42" id="pjH-cF-ksa"/>
+                                    <constraint firstItem="XlZ-9I-Qjb" firstAttribute="leading" secondItem="IQM-gP-d2v" secondAttribute="leading" constant="63" id="xWG-qD-SJA"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="IQM-gP-d2v" secondAttribute="bottom" constant="122" id="5EI-5z-Lja"/>
+                            <constraint firstAttribute="trailing" secondItem="IQM-gP-d2v" secondAttribute="trailing" constant="14" id="7ts-Pg-cax"/>
+                            <constraint firstItem="IQM-gP-d2v" firstAttribute="top" secondItem="GIo-CT-GpZ" secondAttribute="top" constant="49" id="aCQ-TJ-6nx"/>
+                            <constraint firstItem="IQM-gP-d2v" firstAttribute="leading" secondItem="GIo-CT-GpZ" secondAttribute="leading" constant="10" id="dHQ-hW-uXq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Speaker Detail" id="hQC-Tu-S50"/>
+                    <connections>
+                        <outlet property="participant_bio_label" destination="XlZ-9I-Qjb" id="Dxs-hc-Ruk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yfg-EJ-OHA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="789" y="1515"/>
+        </scene>
+        <!--Navigation Controller - Speakers-->
+        <scene sceneID="RI4-To-eOx">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="6a2-MY-AJA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Speakers" image="112-group.png" id="OQ1-yX-d6g"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bep-oy-k9P">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Sgs-qL-uCy" kind="relationship" relationship="rootViewController" id="EoY-hN-3mO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ufs-vu-0Ve" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-111" y="1191"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="pT5-dI-NdS">
@@ -221,6 +322,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="UZF-Ab-Qpy" kind="relationship" relationship="viewControllers" id="8V4-cG-Vru"/>
+                        <segue destination="6a2-MY-AJA" kind="relationship" relationship="viewControllers" id="97J-HY-ezQ"/>
                         <segue destination="SPh-su-qNK" kind="relationship" relationship="viewControllers" id="EOF-Sa-4W6"/>
                     </connections>
                 </tabBarController>
@@ -229,6 +331,11 @@
             <point key="canvasLocation" x="-130" y="480"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="103-map.png" width="26" height="21"/>
+        <image name="112-group.png" width="32" height="21"/>
+        <image name="83-calendar.png" width="23" height="25"/>
+    </resources>
     <classes>
         <class className="AgendaDetailController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AgendaDetailController.h"/>
@@ -254,16 +361,36 @@
         <class className="LocationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationViewController.h"/>
             <relationships>
-                <relationship kind="action" name="actionTapped"/>
-                <relationship kind="action" name="timerFired"/>
                 <relationship kind="action" name="viewDidLoad"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+        <class className="ParticipantViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ParticipantViewCell.h"/>
+            <relationships>
+                <relationship kind="action" name="setupCell:"/>
+                <relationship kind="outlet" name="participant_name_label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="participant_pic" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
         <class className="SDSegmentedControl" superclassName="UISegmentedControl">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SDSegmentedControl.h"/>
+        </class>
+        <class className="SpeakerDetailController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpeakerDetailController.h"/>
+            <relationships>
+                <relationship kind="action" name="viewDidLoad"/>
+                <relationship kind="outlet" name="participant_bio_label" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SpeakersViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpeakersViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="viewDidAppear:"/>
+                <relationship kind="action" name="viewDidLoad"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

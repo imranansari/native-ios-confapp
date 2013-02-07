@@ -6,6 +6,7 @@ class AppDelegate
     url = NSURL.URLWithString("http://localhost:3000")
     self.backend = RKObjectManager.managerWithBaseURL(url)
     add_mapping(session_mapping, "session")
+    add_mapping(participant_mapping, "participant")
 
     puts "test12"
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
@@ -29,6 +30,14 @@ class AppDelegate
       mapping.addAttributeMappingsFromDictionary(title: "title")
       mapping.addAttributeMappingsFromDictionary(presentation: "presentation")
       mapping.addAttributeMappingsFromDictionary(slot: "slot")
+    end
+  end
+
+  def participant_mapping
+    @participant_mapping ||= begin
+      mapping = RKObjectMapping.mappingForClass(Participant)
+      mapping.addAttributeMappingsFromDictionary(name: "name")
+      mapping.addAttributeMappingsFromDictionary(bio: "bio")
     end
   end
 
