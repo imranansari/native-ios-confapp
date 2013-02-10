@@ -26,6 +26,7 @@ Motion::Project::App.setup do |app|
     pod 'RestKit', git: 'https://github.com/RestKit/RestKit.git', branch: 'development'
     pod 'SDSegmentedControl', git: 'https://github.com/rs/SDSegmentedControl.git', tag: '1.0.0'
     pod 'SDWebImage'
+    pod 'REComposeViewController', '~> 1.1'
   end
 
 

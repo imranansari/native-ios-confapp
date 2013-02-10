@@ -2,13 +2,14 @@ class SpeakerDetailController < UIViewController
   extend IB
   attr_accessor :model
 
-  outlet :participant_bio_label, UILabel
+  outlet :participant_bio, UITextView
 
   def viewDidLoad
     self.title = self.model.name
     puts "test"
     puts self.model.bio
-    self.participant_bio_label.text = self.model.bio
+    self.participant_bio.text = self.model.bio
+
   end
 
 end

@@ -24,7 +24,7 @@
         <scene sceneID="rDP-cb-pXU">
             <objects>
                 <viewController id="mc8-ZY-FDg" customClass="AgendaViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Qi4-ez-zqi">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="Qi4-ez-zqi">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="B5X-bK-Xe6">
@@ -42,15 +42,15 @@
                             <constraints>
                                 <constraint firstItem="QC5-Dp-jkI" firstAttribute="trailing" secondItem="B5X-bK-Xe6" secondAttribute="trailing" type="default" id="1tK-aM-TJR"/>
                                 <constraint firstItem="QC5-Dp-jkI" firstAttribute="leading" secondItem="B5X-bK-Xe6" secondAttribute="leading" type="default" id="4ak-hm-vRI"/>
-                                <constraint firstItem="QC5-Dp-jkI" firstAttribute="top" secondItem="B5X-bK-Xe6" secondAttribute="top" type="default" id="dl4-0O-B5z"/>
+                                <constraint firstItem="QC5-Dp-jkI" firstAttribute="top" secondItem="B5X-bK-Xe6" secondAttribute="top" constant="-1" id="5jc-vl-5Np"/>
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AgendaCell" rowHeight="91" id="UPt-w1-sgZ" customClass="AgendaViewCell">
-                                <rect key="frame" x="0.0" y="65" width="320" height="92"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AgendaCell" rowHeight="90" id="UPt-w1-sgZ" customClass="AgendaViewCell">
+                                <rect key="frame" x="0.0" y="65" width="320" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Session Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LA7-e0-XDq">
@@ -71,7 +71,7 @@
                                 <constraints>
                                     <constraint firstItem="JOu-au-axj" firstAttribute="baseline" secondItem="LA7-e0-XDq" secondAttribute="baseline" type="default" id="0Ix-G6-NKJ"/>
                                     <constraint firstAttribute="trailing" secondItem="JOu-au-axj" secondAttribute="trailing" constant="40" id="2A6-np-G9q"/>
-                                    <constraint firstItem="LA7-e0-XDq" firstAttribute="top" secondItem="UPt-w1-sgZ" secondAttribute="top" constant="29" id="I3N-j2-GL8"/>
+                                    <constraint firstItem="LA7-e0-XDq" firstAttribute="top" secondItem="UPt-w1-sgZ" secondAttribute="top" constant="34" id="NxR-1A-khO"/>
                                     <constraint firstItem="LA7-e0-XDq" firstAttribute="leading" secondItem="UPt-w1-sgZ" secondAttribute="leading" constant="5" id="PWz-2k-NwY"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -116,9 +116,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Session Detail" id="m2r-8z-8gH">
-                        <barButtonItem key="rightBarButtonItem" title="Question" id="h7N-nm-8ie">
+                        <barButtonItem key="rightBarButtonItem" image="spechbubble_sq_icon&amp;16.png" id="h7N-nm-8ie">
                             <connections>
-                                <segue destination="mSZ-Yw-oL7" kind="modal" id="Xnp-EO-fQz"/>
+                                <action selector="showQuestionModal:" destination="XWT-o8-pdU" id="E76-bs-FGw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -126,57 +126,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QJI-em-2nN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1328" y="-128"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="qVE-fy-NML">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="mSZ-Yw-oL7" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aqL-rP-wt5">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="OFV-Cr-42B" kind="relationship" relationship="rootViewController" id="WPw-Nm-m74"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j7W-PF-J5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1794" y="-128"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Qa3-5A-T5d">
-            <objects>
-                <viewController id="OFV-Cr-42B" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JQl-Cs-b43">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Post a Question" translatesAutoresizingMaskIntoConstraints="NO" id="pUB-3s-ng2">
-                                <color key="backgroundColor" white="0.87909526209677424" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="298" id="DMP-xv-HXq"/>
-                                    <constraint firstAttribute="height" constant="245" id="pVn-G6-KOa"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="styleId" value="textView"/>
-                                </userDefinedRuntimeAttributes>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="pUB-3s-ng2" firstAttribute="centerX" secondItem="JQl-Cs-b43" secondAttribute="centerX" type="default" id="cgn-8N-Ons"/>
-                            <constraint firstItem="pUB-3s-ng2" firstAttribute="top" secondItem="JQl-Cs-b43" secondAttribute="top" constant="20" symbolic="YES" type="default" id="syz-d0-2Zo"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="1GB-fO-3P8">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="w3c-tw-qLF"/>
-                        <barButtonItem key="rightBarButtonItem" title="Post" id="Qqw-r2-KEH"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r2p-1N-dvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2207" y="-128"/>
         </scene>
         <!--Location View Controller - Location-->
         <scene sceneID="k9a-XJ-K5o">
@@ -258,36 +207,26 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQM-gP-d2v">
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlZ-9I-Qjb">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="styleId" value="bio"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                </subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6f-ih-y1v">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="XlZ-9I-Qjb" secondAttribute="trailing" constant="208" id="IVB-Hj-drN"/>
-                                    <constraint firstAttribute="bottom" secondItem="XlZ-9I-Qjb" secondAttribute="bottom" constant="221" id="P7L-lQ-TwD"/>
-                                    <constraint firstItem="XlZ-9I-Qjb" firstAttribute="top" secondItem="IQM-gP-d2v" secondAttribute="top" constant="42" id="pjH-cF-ksa"/>
-                                    <constraint firstItem="XlZ-9I-Qjb" firstAttribute="leading" secondItem="IQM-gP-d2v" secondAttribute="leading" constant="63" id="xWG-qD-SJA"/>
+                                    <constraint firstAttribute="height" constant="318" id="jk7-rJ-e2J"/>
                                 </constraints>
-                            </scrollView>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="IQM-gP-d2v" secondAttribute="bottom" constant="122" id="5EI-5z-Lja"/>
-                            <constraint firstAttribute="trailing" secondItem="IQM-gP-d2v" secondAttribute="trailing" constant="14" id="7ts-Pg-cax"/>
-                            <constraint firstItem="IQM-gP-d2v" firstAttribute="top" secondItem="GIo-CT-GpZ" secondAttribute="top" constant="49" id="aCQ-TJ-6nx"/>
-                            <constraint firstItem="IQM-gP-d2v" firstAttribute="leading" secondItem="GIo-CT-GpZ" secondAttribute="leading" constant="10" id="dHQ-hW-uXq"/>
+                            <constraint firstItem="K6f-ih-y1v" firstAttribute="leading" secondItem="GIo-CT-GpZ" secondAttribute="leading" type="default" id="F2y-2u-9XM"/>
+                            <constraint firstItem="K6f-ih-y1v" firstAttribute="top" secondItem="GIo-CT-GpZ" secondAttribute="top" type="default" id="TWk-0H-YYf"/>
+                            <constraint firstItem="K6f-ih-y1v" firstAttribute="trailing" secondItem="GIo-CT-GpZ" secondAttribute="trailing" type="default" id="b4G-cz-WdH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Speaker Detail" id="hQC-Tu-S50"/>
                     <connections>
-                        <outlet property="participant_bio_label" destination="XlZ-9I-Qjb" id="Dxs-hc-Ruk"/>
+                        <outlet property="participant_bio" destination="K6f-ih-y1v" id="3Za-O2-A2c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yfg-EJ-OHA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -335,11 +274,13 @@
         <image name="103-map.png" width="26" height="21"/>
         <image name="112-group.png" width="32" height="21"/>
         <image name="83-calendar.png" width="23" height="25"/>
+        <image name="spechbubble_sq_icon&amp;16.png" width="16" height="16"/>
     </resources>
     <classes>
         <class className="AgendaDetailController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AgendaDetailController.h"/>
             <relationships>
+                <relationship kind="action" name="showQuestionModal:"/>
                 <relationship kind="action" name="viewDidLoad"/>
             </relationships>
         </class>
@@ -354,6 +295,11 @@
         <class className="AgendaViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AgendaViewController.h"/>
             <relationships>
+                <relationship kind="action" name="getSessions:"/>
+                <relationship kind="action" name="numberOfSectionsInTableView:"/>
+                <relationship kind="action" name="row_for_index_path:"/>
+                <relationship kind="action" name="rows_for_section:"/>
+                <relationship kind="action" name="sections"/>
                 <relationship kind="action" name="viewDidAppear:"/>
                 <relationship kind="action" name="viewDidLoad"/>
             </relationships>
@@ -382,7 +328,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SpeakerDetailController.h"/>
             <relationships>
                 <relationship kind="action" name="viewDidLoad"/>
-                <relationship kind="outlet" name="participant_bio_label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="participant_bio" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="SpeakersViewController" superclassName="UIViewController">

@@ -26,7 +26,8 @@
 }*/
 
 #nav_bar{
-    background-color: linear-gradient(top,#6C1E28, #9D313D);
+    background-color: linear-gradient(top, #661827, #882033);
+    /*background-color: #73232F;*/
     /*border-width: 1px;*/
     /*border-color: #98002E;*/
     /*border-radius: 5px;*/
@@ -34,7 +35,7 @@
 }
 
 #nav_bar nav-buttons {
-    background-color:  #587992
+    background-color:  #610C1C
 }
 
 

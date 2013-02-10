@@ -29,6 +29,8 @@ class AppDelegate
       mapping.addAttributeMappingsFromDictionary(desc: "desc")
       mapping.addAttributeMappingsFromDictionary(title: "title")
       mapping.addAttributeMappingsFromDictionary(presentation: "presentation")
+      mapping.addAttributeMappingsFromDictionary(start: "start")
+      mapping.addAttributeMappingsFromDictionary(end: "end")
       mapping.addAttributeMappingsFromDictionary(slot: "slot")
     end
   end
