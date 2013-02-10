@@ -3,6 +3,7 @@ $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project'
 require 'motion-pixate'
 require 'map-kit-wrapper'
+require 'bubble-wrap/all'
 
 require 'bundler'
 

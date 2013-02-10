@@ -70,16 +70,40 @@ class AgendaViewController < UIViewController
   end
 
 
+=begin
+  def tableView(tableView, heightForHeaderInSection: section)
+    30
+  end
+=end
+
+=begin
+  def tableView(tableView, viewForHeaderInSection: section)
+
+    view = UIView.alloc.init
+    view.setBackgroundColor("#E9E3D6".to_color)
+
+    sectionLabel = UILabel.alloc.initWithFrame(CGRectMake(255, 75, 60, 30))
+    sectionLabel.backgroundColor = UIColor.clearColor
+    sectionLabel.text= "test"
+    sectionLabel.textColor = UIColor.blackColor
+
+    #view.addSubview(sectionLabel)
+
+  end
+=end
+
+
   #helpers
   def getSessions(result)
-    sessions = result.array
+    sessions = result.array.sort_by &:start
 
     groupedSession = sessions.group_by { |session| session.start }
     @massagedGroupedSession = {}
     #puts groupedSession
 
     groupedSession.each_pair do |k, v|
-      @massagedGroupedSession[k] = v
+      startTime = Time.iso8601(k).strftime('%I:%M%p')
+      @massagedGroupedSession[startTime] = v
     end
 
     #puts groupedSession.keys.size

@@ -13,7 +13,11 @@
 
 }*/
 
-#listTableCell{
+#listTableCell {
+    background-color: linear-gradient(#E8E7DF, #FBFAF1);
+}
+
+#listTableCell:selected {
     background-color: linear-gradient(#E8E7DF, #FBFAF1);
 }
 
@@ -25,7 +29,7 @@
     height: 35px;
 }*/
 
-#nav_bar{
+#nav_bar {
     background-color: linear-gradient(top, #661827, #882033);
     /*background-color: #73232F;*/
     /*border-width: 1px;*/
@@ -35,16 +39,22 @@
 }
 
 #nav_bar nav-buttons {
-    background-color:  #610C1C
+    background-color: #610C1C
 }
 
-
 #textView {
-    border-radius   : 5px;
-    border-width    : 1px;
-    border-color    : rgb(192,193,194);
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: rgb(192, 193, 194);
 }
 
 #bio {
     color: red;
 }
+
+/*
+#speakerPic {
+    border-width: 1px;
+    border-color: #84a254;
+    border-radius: 5px;
+}*/

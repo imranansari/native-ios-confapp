@@ -1,11 +1,15 @@
 class AgendaDetailController < UIViewController
-
   extend IB
+
   attr_accessor :model
 
+  outlet :session_desc, UITextView
 
   def viewDidLoad
     self.title = self.model.title
+    self.session_desc.text = self.model.desc
+
+
     @composeViewController = REComposeViewController.alloc.init
 
 =begin
@@ -52,6 +56,10 @@ class AgendaDetailController < UIViewController
     if (result == REComposeResultPosted)
       puts composeViewController.text
     end
+  end
+
+  def showDeck
+    puts self.model.presentation.url
   end
 
 end

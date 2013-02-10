@@ -1,22 +1,6 @@
 class SpeakersViewController < UIViewController
   attr_accessor :dataSource
 
-  def viewDidAppear(animated)
-    App.delegate.backend.getObjectsAtPath("/api/participant",
-                                          parameters: nil,
-                                          success: lambda do |operation, result|
-                                            @participants = result.array
-                                            self.dataSource = @participants
-                                            self.view.reloadData
-                                          end,
-                                          failure: lambda do |operation, error|
-                                            puts error.localizedDescription
-                                          end)
-
-    self.navigationController.navigationBar.styleId = "nav_bar"
-
-  end
-
   # RestKit callback
   def objectLoader(object_loader, didLoadObjects:participants)
     @participants = participants
@@ -57,5 +41,18 @@ class SpeakersViewController < UIViewController
     @participants = []
     #self.dataSource = ("A".."Z").to_a
     self.dataSource = @participants
+
+    App.delegate.backend.getObjectsAtPath("/api/participant",
+                                          parameters: nil,
+                                          success: lambda do |operation, result|
+                                            @participants = result.array
+                                            self.dataSource = @participants
+                                            self.view.reloadData
+                                          end,
+                                          failure: lambda do |operation, error|
+                                            puts error.localizedDescription
+                                          end)
+
+    self.navigationController.navigationBar.styleId = "nav_bar"
   end
 end

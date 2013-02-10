@@ -24,7 +24,7 @@
         <scene sceneID="rDP-cb-pXU">
             <objects>
                 <viewController id="mc8-ZY-FDg" customClass="AgendaViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="Qi4-ez-zqi">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="81" sectionHeaderHeight="22" sectionFooterHeight="22" id="Qi4-ez-zqi">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="B5X-bK-Xe6">
@@ -46,11 +46,11 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AgendaCell" rowHeight="90" id="UPt-w1-sgZ" customClass="AgendaViewCell">
-                                <rect key="frame" x="0.0" y="65" width="320" height="91"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AgendaCell" rowHeight="81" id="UPt-w1-sgZ" customClass="AgendaViewCell">
+                                <rect key="frame" x="0.0" y="65" width="320" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Session Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LA7-e0-XDq">
@@ -69,10 +69,10 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="JOu-au-axj" firstAttribute="baseline" secondItem="LA7-e0-XDq" secondAttribute="baseline" type="default" id="0Ix-G6-NKJ"/>
                                     <constraint firstAttribute="trailing" secondItem="JOu-au-axj" secondAttribute="trailing" constant="40" id="2A6-np-G9q"/>
-                                    <constraint firstItem="LA7-e0-XDq" firstAttribute="top" secondItem="UPt-w1-sgZ" secondAttribute="top" constant="34" id="NxR-1A-khO"/>
-                                    <constraint firstItem="LA7-e0-XDq" firstAttribute="leading" secondItem="UPt-w1-sgZ" secondAttribute="leading" constant="5" id="PWz-2k-NwY"/>
+                                    <constraint firstItem="LA7-e0-XDq" firstAttribute="top" secondItem="UPt-w1-sgZ" secondAttribute="top" constant="29" id="3DY-jM-YZd"/>
+                                    <constraint firstItem="LA7-e0-XDq" firstAttribute="baseline" secondItem="JOu-au-axj" secondAttribute="baseline" type="default" id="5XR-a3-Nf8"/>
+                                    <constraint firstItem="LA7-e0-XDq" firstAttribute="leading" secondItem="UPt-w1-sgZ" secondAttribute="leading" constant="11" id="e9h-Ig-NgM"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleId" value="listTableCell"/>
@@ -103,16 +103,51 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Session Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1M-Th-ffK">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDB-SH-AmM">
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWR-Yb-d9R">
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="297" id="T3H-Hr-NzC"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zWR-Yb-d9R" firstAttribute="top" secondItem="TDB-SH-AmM" secondAttribute="top" type="default" id="2D5-Ra-ysY"/>
+                                    <constraint firstItem="zWR-Yb-d9R" firstAttribute="leading" secondItem="TDB-SH-AmM" secondAttribute="leading" type="default" id="G9D-zn-MPz"/>
+                                    <constraint firstAttribute="bottom" secondItem="zWR-Yb-d9R" secondAttribute="bottom" constant="10" id="KUp-jQ-X0y"/>
+                                    <constraint firstItem="zWR-Yb-d9R" firstAttribute="centerX" secondItem="TDB-SH-AmM" secondAttribute="centerX" type="default" id="NPP-7g-eIX"/>
+                                    <constraint firstItem="zWR-Yb-d9R" firstAttribute="trailing" secondItem="TDB-SH-AmM" secondAttribute="trailing" type="default" id="hhg-kg-IDb"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xd-Hy-tBs">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="297" id="J9v-1L-1YK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="View Deck">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showDeck" destination="XWT-o8-pdU" eventType="touchUpInside" id="c2V-ab-t3M"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="b1M-Th-ffK" firstAttribute="top" secondItem="Pu1-Cg-R3m" secondAttribute="top" constant="20" symbolic="YES" type="default" id="148-O7-Laj"/>
-                            <constraint firstItem="b1M-Th-ffK" firstAttribute="leading" secondItem="Pu1-Cg-R3m" secondAttribute="leading" constant="15" id="idq-m8-x6A"/>
+                            <constraint firstItem="TDB-SH-AmM" firstAttribute="leading" secondItem="Pu1-Cg-R3m" secondAttribute="leading" type="default" id="82G-nO-RTc"/>
+                            <constraint firstAttribute="bottom" secondItem="6xd-Hy-tBs" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Eoa-r3-2Cq"/>
+                            <constraint firstItem="TDB-SH-AmM" firstAttribute="trailing" secondItem="Pu1-Cg-R3m" secondAttribute="trailing" type="default" id="NoL-ck-AJT"/>
+                            <constraint firstItem="6xd-Hy-tBs" firstAttribute="centerX" secondItem="TDB-SH-AmM" secondAttribute="centerX" type="default" id="bLJ-MX-UhN"/>
+                            <constraint firstAttribute="bottom" secondItem="TDB-SH-AmM" secondAttribute="bottom" constant="148" id="jHy-Xv-h4q"/>
+                            <constraint firstItem="TDB-SH-AmM" firstAttribute="top" secondItem="Pu1-Cg-R3m" secondAttribute="top" type="default" id="xV0-8G-f7G"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Session Detail" id="m2r-8z-8gH">
@@ -122,6 +157,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="session_desc" destination="zWR-Yb-d9R" id="iFb-2S-hDY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QJI-em-2nN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,6 +206,9 @@
                                                 <constraint firstAttribute="width" constant="52" id="daX-cI-VpH"/>
                                                 <constraint firstAttribute="height" constant="44" id="jfw-xO-2uK"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="styleId" value="speakerPic"/>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -280,8 +321,10 @@
         <class className="AgendaDetailController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AgendaDetailController.h"/>
             <relationships>
+                <relationship kind="action" name="showDeck"/>
                 <relationship kind="action" name="showQuestionModal:"/>
                 <relationship kind="action" name="viewDidLoad"/>
+                <relationship kind="outlet" name="session_desc" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="AgendaViewCell" superclassName="UITableViewCell">
@@ -334,8 +377,19 @@
         <class className="SpeakersViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SpeakersViewController.h"/>
             <relationships>
-                <relationship kind="action" name="viewDidAppear:"/>
                 <relationship kind="action" name="viewDidLoad"/>
+            </relationships>
+        </class>
+        <class className="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIView.h"/>
+            <relationships>
+                <relationship kind="action" name="handle_gesture:"/>
+            </relationships>
+        </class>
+        <class className="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="content_frame"/>
             </relationships>
         </class>
     </classes>
