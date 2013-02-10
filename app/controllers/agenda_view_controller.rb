@@ -9,7 +9,7 @@ class AgendaViewController < UIViewController
     App.delegate.backend.getObjectsAtPath("/api/session",
                                           parameters: nil,
                                           success: lambda do |operation, result|
-                                            @data =  getSessions(result)
+                                            @data = getSessions(result)
                                             self.dataSource = @data
 
                                             self.view.reloadData
@@ -39,7 +39,7 @@ class AgendaViewController < UIViewController
     rows_for_section(index_path.section)[index_path.row]
   end
 
-  def tableView(tableView, titleForHeaderInSection:section)
+  def tableView(tableView, titleForHeaderInSection: section)
     sections[section]
   end
 
@@ -50,24 +50,6 @@ class AgendaViewController < UIViewController
   def tableView(tableView, numberOfRowsInSection: section)
     rows_for_section(section).count
   end
-
-=begin
-  def tableView(tableView, cellForRowAtIndexPath: indexPath)
-    @reuseIdentifier ||= "CELL_IDENTIFIER"
-
-    cell = tableView.dequeueReusableCellWithIdentifier(@reuseIdentifier)
-    cell = UITableViewCell.alloc.initWithStyle(
-        UITableViewCellStyleDefault,
-        reuseIdentifier:@reuseIdentifier)
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator
-
-
-    cell.textLabel.text = row_for_index_path(indexPath).title
-    #cell.textLabel.text = "test"
-
-    cell
-  end
-=end
 
   def tableView(tv, cellForRowAtIndexPath: indexPath)
     @reuseIdentifier ||= 'AgendaCell'
@@ -83,30 +65,24 @@ class AgendaViewController < UIViewController
   end
 
   def prepareForSegue(segue, sender: sender)
-    row = self.view.indexPathForSelectedRow.row
-    puts row
-
     selectedSession = row_for_index_path(self.view.indexPathForSelectedRow)
-    puts selectedSession
     segue.destinationViewController.model = selectedSession
   end
 
 
-
-
   #helpers
   def getSessions(result)
-  sessions = result.array
+    sessions = result.array
 
-  groupedSession = sessions.group_by { |session| session.start }
-  @massagedGroupedSession = {}
-  #puts groupedSession
+    groupedSession = sessions.group_by { |session| session.start }
+    @massagedGroupedSession = {}
+    #puts groupedSession
 
-    groupedSession.each_pair do |k,v|
+    groupedSession.each_pair do |k, v|
       @massagedGroupedSession[k] = v
     end
 
-  #puts groupedSession.keys.size
+    #puts groupedSession.keys.size
 
 =begin
     datesCollection = sessions.uniq { |x| x.start }
@@ -117,7 +93,7 @@ class AgendaViewController < UIViewController
     }
 =end
 
-  #sessions.sort_by &:start
+    #sessions.sort_by &:start
     @massagedGroupedSession
-end
+  end
 end
