@@ -33,9 +33,8 @@
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QC5-Dp-jkI" customClass="SDSegmentedControl">
                                     <segments>
-                                        <segment title="Mon 7-1"/>
-                                        <segment title="Tue1-8"/>
-                                        <segment title="Wed 1-9"/>
+                                        <segment title=""/>
+                                        <segment title=""/>
                                     </segments>
                                 </segmentedControl>
                             </subviews>
@@ -90,6 +89,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Agenda" id="Pv7-R9-F5X"/>
+                    <connections>
+                        <outlet property="days_filter" destination="QC5-Dp-jkI" id="tbU-L7-vvp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CE2-Vi-ct6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -321,6 +323,8 @@
         <class className="AgendaDetailController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AgendaDetailController.h"/>
             <relationships>
+                <relationship kind="action" name="download_file"/>
+                <relationship kind="action" name="numberOfPreviewItemsInPreviewController:"/>
                 <relationship kind="action" name="showDeck"/>
                 <relationship kind="action" name="showQuestionModal:"/>
                 <relationship kind="action" name="viewDidLoad"/>
@@ -339,12 +343,17 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AgendaViewController.h"/>
             <relationships>
                 <relationship kind="action" name="getSessions:"/>
+                <relationship kind="action" name="loadConferenceFromServer"/>
+                <relationship kind="action" name="numberOfDaysUntil:"/>
                 <relationship kind="action" name="numberOfSectionsInTableView:"/>
+                <relationship kind="action" name="parse:"/>
                 <relationship kind="action" name="row_for_index_path:"/>
                 <relationship kind="action" name="rows_for_section:"/>
                 <relationship kind="action" name="sections"/>
+                <relationship kind="action" name="set_days_filter"/>
                 <relationship kind="action" name="viewDidAppear:"/>
                 <relationship kind="action" name="viewDidLoad"/>
+                <relationship kind="outlet" name="days_filter" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
         <class className="LocationViewController" superclassName="UIViewController">
@@ -353,8 +362,11 @@
                 <relationship kind="action" name="viewDidLoad"/>
             </relationships>
         </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
+        <class className="NSLayoutConstraint">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+            <relationships>
+                <relationship kind="action" name="to_s"/>
+            </relationships>
         </class>
         <class className="ParticipantViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ParticipantViewCell.h"/>
@@ -380,16 +392,72 @@
                 <relationship kind="action" name="viewDidLoad"/>
             </relationships>
         </class>
+        <class className="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIButton.h"/>
+            <relationships>
+                <relationship kind="action" name="contact"/>
+                <relationship kind="action" name="contact_add"/>
+                <relationship kind="action" name="custom"/>
+                <relationship kind="action" name="detail"/>
+                <relationship kind="action" name="detail_disclosure"/>
+                <relationship kind="action" name="info"/>
+                <relationship kind="action" name="info_dark"/>
+                <relationship kind="action" name="info_light"/>
+                <relationship kind="action" name="rounded"/>
+                <relationship kind="action" name="rounded_rect"/>
+            </relationships>
+        </class>
+        <class className="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIControl.h"/>
+            <relationships>
+                <relationship kind="action" name="sugarcube_callbacks"/>
+            </relationships>
+        </class>
+        <class className="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UINavigationController.h"/>
+            <relationships>
+                <relationship kind="action" name="push:"/>
+            </relationships>
+        </class>
+        <class className="UISegmentedControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UISegmentedControl.h"/>
+            <relationships>
+                <relationship kind="action" name="bar:"/>
+                <relationship kind="action" name="bezeled:"/>
+                <relationship kind="action" name="bordered:"/>
+                <relationship kind="action" name="plain:"/>
+            </relationships>
+        </class>
+        <class className="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITabBarController.h"/>
+            <relationships>
+                <relationship kind="action" name="push:"/>
+            </relationships>
+        </class>
+        <class className="UITextView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITextView.h"/>
+            <relationships>
+                <relationship kind="action" name="sugarcube_callbacks"/>
+            </relationships>
+        </class>
         <class className="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UIView.h"/>
             <relationships>
+                <relationship kind="action" name="controller"/>
+                <relationship kind="action" name="first_responder"/>
                 <relationship kind="action" name="handle_gesture:"/>
+                <relationship kind="action" name="hide"/>
+                <relationship kind="action" name="show"/>
+                <relationship kind="action" name="uiimage"/>
+                <relationship kind="action" name="unshift:"/>
             </relationships>
         </class>
         <class className="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UIViewController.h"/>
             <relationships>
                 <relationship kind="action" name="content_frame"/>
+                <relationship kind="action" name="push:"/>
+                <relationship kind="action" name="to_s"/>
             </relationships>
         </class>
     </classes>

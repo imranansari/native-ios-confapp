@@ -1,23 +1,39 @@
 class AgendaViewController < UIViewController
+  extend IB
+
   attr_accessor :dataSource
+  outlet :days_filter, UISegmentedControl
 
   def viewDidLoad
     super
 
     @data = {}
 
+    segmentedControlAppearance = SDSegmentedControl.appearance
+
+=begin
+    segmentedControlAppearance.backgroundColor = UIColor.redColor
+    segmentedControlAppearance.borderColor = UIColor.greenColor
+=end
+    segmentedControlAppearance.arrowSize = 8
+
+
     App.delegate.backend.getObjectsAtPath("/api/session",
                                           parameters: nil,
                                           success: lambda do |operation, result|
                                             @data = getSessions(result)
                                             self.dataSource = @data
-
                                             self.view.reloadData
                                           end,
                                           failure: lambda do |operation, error|
                                             puts error.localizedDescription
+
                                           end)
+
+    loadConferenceFromServer
+
   end
+
 
   def viewDidAppear(animated)
 
@@ -111,7 +127,7 @@ class AgendaViewController < UIViewController
 =begin
     datesCollection = sessions.uniq { |x| x.start }
 
-    datesCollection.each { |x|
+    zdatesCollection.each { |x|
       puts x.start
 
     }
@@ -120,4 +136,75 @@ class AgendaViewController < UIViewController
     #sessions.sort_by &:start
     @massagedGroupedSession
   end
+
+  def set_days_filter
+
+    self.days_filter.removeSegmentAtIndex(0, animated: false)
+    self.days_filter.removeSegmentAtIndex(0, animated: false)
+
+    @conference_data.array.each{ |conference|
+      puts conference.name
+
+      startDate = parse(conference.dateStart)
+      endDate = parse(conference.dateEnd)
+
+      secondsBetween =  endDate.timeIntervalSinceDate(startDate)
+      numberOfDays = secondsBetween / 86400
+      puts numberOfDays
+
+      for i in 1..numberOfDays
+        dt =  startDate.delta(days:i)
+        puts dt
+        self.days_filter.insertSegmentWithTitle(dt.string_with_format("MMM/dd"), atIndex: i+1, animated: true)
+      end
+
+
+=begin
+      puts conference.location.latitude
+      puts conference.location.address.address1
+=end
+
+
+    }
+
+    #self.days_filter.removeSegmentAtIndex(0, animated: false)
+    #self.days_filter.removeSegmentAtIndex(0, animated: false)
+
+    #self.days_filter.insertSegmentWithTitle("Title Only", atIndex: 0, animated: true)
+  end
+
+  def loadConferenceFromServer
+
+    App.delegate.backend.getObjectsAtPath("/api/conference",
+                                          parameters: nil,
+                                          success: lambda do |operation, result|
+                                            @conference_data = result
+                                            set_days_filter()
+                                            self.view.reloadData
+                                          end,
+                                          failure: lambda do |operation, error|
+                                            puts error.localizedDescription
+
+                                          end)
+
+  end
+
+
+
+  def parse(string)
+    date_formatter = NSDateFormatter.alloc.init
+    date_formatter.dateFormat = "yyyy-MM-dd"
+    date_formatter.dateFromString string
+  end
+
+=begin
+  def numberOfDaysUntil(aDate)
+    NSCalendar *gregorianCalendar = NSCalendar.alloc.initWithCalendarIdentifier:NSGregorianCalendar
+
+    NSDateComponents *components = [gregorianCalendar components:NSDayCalendarUnit fromDate:self toDate:aDate options:0];
+
+    return [components day];
+  }
+=end
+
 end

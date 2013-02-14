@@ -4,6 +4,8 @@ require 'motion/project'
 require 'motion-pixate'
 require 'map-kit-wrapper'
 require 'bubble-wrap/all'
+require "afmotion"
+require 'sugarcube'
 
 require 'bundler'
 
@@ -28,10 +30,11 @@ Motion::Project::App.setup do |app|
     pod 'SDSegmentedControl', git: 'https://github.com/rs/SDSegmentedControl.git', tag: '1.0.0'
     pod 'SDWebImage'
     pod 'REComposeViewController', '~> 1.1'
+    pod 'AFNetworking'
   end
 
 
-  app.frameworks += %w(QuartzCore)
+  app.frameworks += %w(QuartzCore QuickLook)
 
   ##Pixate
   app.pixate.user = 'imran.iansari@gmail.com'
