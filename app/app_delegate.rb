@@ -1,9 +1,11 @@
 class AppDelegate
-  attr_accessor :window, :backend
+  attr_accessor :window, :backend, :conferenceModel
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
 
-    url = NSURL.URLWithString("http://macbook.local:3000")
+    #GMSServices.provideAPIKey("YOUR_API_KEY")
+
+    url = NSURL.URLWithString("http://conf-app-api.herokuapp.com")
     self.backend = RKObjectManager.managerWithBaseURL(url)
     add_mapping(session_mapping, "session")
     add_mapping(participant_mapping, "participant")
@@ -40,6 +42,7 @@ class AppDelegate
       mapping = RKObjectMapping.mappingForClass(Participant)
       mapping.addAttributeMappingsFromDictionary(name: "name")
       mapping.addAttributeMappingsFromDictionary(bio: "bio")
+      mapping.addAttributeMappingsFromDictionary(pic_file_name: "pic_file_name")
     end
   end
 
@@ -48,6 +51,10 @@ class AppDelegate
     @address_mapping ||= begin
       mapping = RKObjectMapping.mappingForClass(Address)
       mapping.addAttributeMappingsFromDictionary(address1: "address1")
+      mapping.addAttributeMappingsFromDictionary(address2: "address2")
+      mapping.addAttributeMappingsFromDictionary(city: "city")
+      mapping.addAttributeMappingsFromDictionary(state: "state")
+      mapping.addAttributeMappingsFromDictionary(zip: "zip")
     end
   end
 
@@ -55,6 +62,8 @@ class AppDelegate
     @location_mapping ||= begin
       mapping = RKObjectMapping.mappingForClass(Location)
       mapping.addAttributeMappingsFromDictionary(latitude: "latitude")
+      mapping.addAttributeMappingsFromDictionary(longitude: "longitude")
+      mapping.addAttributeMappingsFromDictionary(desc: "desc")
 
       mapping.addPropertyMapping(RKRelationshipMapping.relationshipMappingFromKeyPath("address", toKeyPath:"address", withMapping:address_mapping))
     end

@@ -164,6 +164,10 @@ class AgendaViewController < UIViewController
       puts conference.location.address.address1
 =end
 
+      puts "data loaded"
+      App.delegate.conferenceModel = conference
+
+      #NSNotificationCenter.defaultCenter.postNotificationName("location_info", object:conference.location.address)
 
     }
 

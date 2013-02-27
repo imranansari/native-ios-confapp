@@ -2,7 +2,7 @@ $:.unshift("/Library/RubyMotion/lib")
 
 require 'motion/project'
 require 'motion-pixate'
-require 'map-kit-wrapper'
+#require 'map-kit-wrapper'
 require 'bubble-wrap/all'
 require "afmotion"
 require 'sugarcube'
@@ -27,14 +27,15 @@ Motion::Project::App.setup do |app|
 
   app.pods do
     pod 'RestKit', git: 'https://github.com/RestKit/RestKit.git', branch: 'development'
-    pod 'SDSegmentedControl', git: 'https://github.com/rs/SDSegmentedControl.git', tag: '1.0.0'
+    pod 'SDSegmentedControl', git: 'https://github.com/rs/SDSegmentedControl.git'
     pod 'SDWebImage'
     pod 'REComposeViewController', '~> 1.1'
     pod 'AFNetworking'
+    #pod 'Google-Maps-iOS-SDK', '~> 1.0.2'
   end
 
 
-  app.frameworks += %w(QuartzCore QuickLook)
+  app.frameworks += %w(QuartzCore QuickLook CoreLocation MapKit)
 
   ##Pixate
   app.pixate.user = 'imran.iansari@gmail.com'

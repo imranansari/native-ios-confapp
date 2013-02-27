@@ -13,7 +13,8 @@ class ParticipantViewCell< UITableViewCell
     self.participant_pic.image = image
 =end
 
-    self.participant_pic.setImageWithURL("http://placehold.it/20x20.png")
+    #self.participant_pic.setImageWithURL("http://placehold.it/20x20.png")
+    self.participant_pic.setImageWithURL(participant.pic_file_name)
 
 
 =begin
