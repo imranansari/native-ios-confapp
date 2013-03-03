@@ -31,6 +31,10 @@ class SpeakersViewController < UIViewController
     segue.destinationViewController.model = selectedSession
   end
 
+  def tableView(tableView, didSelectRowAtIndexPath:indexPath)
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+  end
+
   def tableView(tv, heightForRowAtIndexPath:indexPath)
     60 # fixed size
   end

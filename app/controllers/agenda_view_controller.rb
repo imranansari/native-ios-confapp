@@ -15,14 +15,14 @@ class AgendaViewController < UIViewController
 
 
     stainViewAppearance = SDStainView.appearance
-    stainViewAppearance.backgroundColor = String.new("ca1f1e").to_color
+    stainViewAppearance.backgroundColor = String.new("e86666").to_color
     stainViewAppearance.shadowColor = String.new("8a1117").to_color
-    stainViewAppearance.shadowBlur = 5
+    stainViewAppearance.shadowBlur = 3
 
 
     segmentedControlAppearance = SDSegmentedControl.appearance
     segmentedControlAppearance.arrowSize = 8
-    #segmentedControlAppearance.backgroundColor = UIColor.greenColor
+    segmentedControlAppearance.backgroundColor = String.new("e86666").to_color
 
 
     App.delegate.backend.getObjectsAtPath("/api/session",
@@ -92,6 +92,9 @@ class AgendaViewController < UIViewController
     segue.destinationViewController.model = selectedSession
   end
 
+  def tableView(tableView, didSelectRowAtIndexPath:indexPath)
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+  end
 
 =begin
   def tableView(tableView, heightForHeaderInSection: section)

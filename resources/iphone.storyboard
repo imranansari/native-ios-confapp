@@ -20,7 +20,7 @@
             </objects>
             <point key="canvasLocation" x="435" y="-119"/>
         </scene>
-        <!--Agenda View Controller - Agenda-->
+        <!--Agenda View Controller - Schedule-->
         <scene sceneID="rDP-cb-pXU">
             <objects>
                 <viewController id="mc8-ZY-FDg" customClass="AgendaViewController" sceneMemberID="viewController">
@@ -28,7 +28,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="B5X-bK-Xe6">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QC5-Dp-jkI" customClass="SDSegmentedControl">
@@ -37,16 +37,27 @@
                                         <segment title=""/>
                                     </segments>
                                 </segmentedControl>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Training" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umd-zH-kcc">
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="105" id="U4k-jv-Ma4"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
+                            <color key="backgroundColor" red="0.90608858471074383" green="0.41568630933761597" blue="0.41568630933761597" alpha="0.95000000000000007" colorSpace="deviceRGB"/>
                             <constraints>
                                 <constraint firstItem="QC5-Dp-jkI" firstAttribute="trailing" secondItem="B5X-bK-Xe6" secondAttribute="trailing" type="default" id="1tK-aM-TJR"/>
                                 <constraint firstItem="QC5-Dp-jkI" firstAttribute="leading" secondItem="B5X-bK-Xe6" secondAttribute="leading" type="default" id="4ak-hm-vRI"/>
                                 <constraint firstItem="QC5-Dp-jkI" firstAttribute="top" secondItem="B5X-bK-Xe6" secondAttribute="top" constant="-1" id="5jc-vl-5Np"/>
+                                <constraint firstAttribute="bottom" secondItem="umd-zH-kcc" secondAttribute="bottom" constant="2" id="QwW-O6-SgS"/>
+                                <constraint firstItem="umd-zH-kcc" firstAttribute="leading" secondItem="B5X-bK-Xe6" secondAttribute="leading" constant="5" id="gA9-Yi-jt0"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AgendaCell" rowHeight="81" id="UPt-w1-sgZ" customClass="AgendaViewCell">
-                                <rect key="frame" x="0.0" y="65" width="320" height="81"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
@@ -91,7 +102,7 @@
                             <outlet property="delegate" destination="mc8-ZY-FDg" id="Vbe-Xu-BV3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Agenda" id="Pv7-R9-F5X"/>
+                    <navigationItem key="navigationItem" title="Schedule" id="Pv7-R9-F5X"/>
                     <connections>
                         <outlet property="days_filter" destination="QC5-Dp-jkI" id="tbU-L7-vvp"/>
                     </connections>
@@ -175,7 +186,7 @@
             <objects>
                 <viewController id="SPh-su-qNK" customClass="LocationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IRP-dO-3Td">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ULe-p0-4OW"/>
@@ -200,6 +211,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Location" image="103-map.png" id="SGJ-hS-5Xi"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="locationMap" destination="ULe-p0-4OW" id="Ldw-bm-qwP"/>
                     </connections>
@@ -285,12 +297,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u5u-Mm-mtF">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="141" id="0YF-rB-9U1"/>
-                                    <constraint firstAttribute="height" constant="128" id="Weq-sL-k6y"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zC1-bv-BBJ">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="148" id="8HD-bg-vKQ"/>
@@ -300,22 +306,31 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="112-group.png" translatesAutoresizingMaskIntoConstraints="NO" id="qbB-60-OVb">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="Zpd-T8-q1g"/>
+                                    <constraint firstAttribute="height" constant="125" id="rnq-2A-JUM"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleId" value="speakerDetailPic"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="u5u-Mm-mtF" firstAttribute="leading" secondItem="GIo-CT-GpZ" secondAttribute="leading" constant="7" id="5DF-Km-Db8"/>
+                            <constraint firstItem="qbB-60-OVb" firstAttribute="top" secondItem="GIo-CT-GpZ" secondAttribute="top" constant="10" id="4uF-I1-Ygz"/>
+                            <constraint firstItem="qbB-60-OVb" firstAttribute="top" secondItem="zC1-bv-BBJ" secondAttribute="top" type="default" id="DUN-o2-pBA"/>
+                            <constraint firstItem="qbB-60-OVb" firstAttribute="leading" secondItem="GIo-CT-GpZ" secondAttribute="leading" constant="7" id="Dsh-3L-Bme"/>
                             <constraint firstItem="K6f-ih-y1v" firstAttribute="leading" secondItem="GIo-CT-GpZ" secondAttribute="leading" type="default" id="F2y-2u-9XM"/>
-                            <constraint firstAttribute="trailing" secondItem="zC1-bv-BBJ" secondAttribute="trailing" constant="6" id="NYg-Ni-e30"/>
-                            <constraint firstItem="u5u-Mm-mtF" firstAttribute="top" secondItem="GIo-CT-GpZ" secondAttribute="top" constant="10" id="Pb3-OU-Owf"/>
                             <constraint firstItem="K6f-ih-y1v" firstAttribute="trailing" secondItem="GIo-CT-GpZ" secondAttribute="trailing" type="default" id="b4G-cz-WdH"/>
-                            <constraint firstItem="zC1-bv-BBJ" firstAttribute="top" secondItem="u5u-Mm-mtF" secondAttribute="top" type="default" id="n97-Vt-jwL"/>
+                            <constraint firstAttribute="trailing" secondItem="zC1-bv-BBJ" secondAttribute="trailing" constant="12" id="uly-25-NLd"/>
                             <constraint firstItem="K6f-ih-y1v" firstAttribute="top" secondItem="GIo-CT-GpZ" secondAttribute="top" constant="138" id="vbg-7z-W7b"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Speaker Profile" id="hQC-Tu-S50"/>
                     <connections>
                         <outlet property="participant_bio" destination="K6f-ih-y1v" id="3Za-O2-A2c"/>
-                        <outlet property="participant_pic" destination="u5u-Mm-mtF" id="7Fr-Hv-yol"/>
+                        <outlet property="participant_detail_pic" destination="qbB-60-OVb" id="ayE-Ka-nUe"/>
                         <outlet property="participant_twitter" destination="zC1-bv-BBJ" id="wIz-b2-Nge"/>
                     </connections>
                 </viewController>
@@ -434,7 +449,7 @@
             <relationships>
                 <relationship kind="action" name="viewDidLoad"/>
                 <relationship kind="outlet" name="participant_bio" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="participant_pic" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="participant_detail_pic" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="participant_twitter" candidateClass="UILabel"/>
             </relationships>
         </class>

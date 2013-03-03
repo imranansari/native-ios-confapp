@@ -14,11 +14,11 @@
 }*/
 
 #listTableCell {
-    background-color: linear-gradient(#E8E7DF, #FBFAF1);
+    background-color: linear-gradient(#e5e5e5, #ffffff);
 }
 
 #listTableCell:selected {
-    background-color: linear-gradient(#E8E7DF, #FBFAF1);
+    background-color: #e5e5e5;
 }
 
 /*#dayFilter{
@@ -53,17 +53,23 @@
 }
 
 #speakerPic {
-    /*    border-width: 5px;
-        border-color: grey;
-        border-radius: 5px;*/
+/*    border-width: 5px;
+    border-color: white;
+    border-radius: 5px;*/
     box-shadow: 5 5 5;
 }
 
-#speakerDetailPic {
+/*#speakerDetailPic {
+    #box-shadow: 5 5 5;
     border-width: 5px;
-}
+    border-color: grey;
+    border-radius: 5px;
+}*/
 
 #agendaTable table-view-headerfooter-view {
-    background-color: #e86666;
+    /*background-color: #e86666;*/
+   background-color: #d0d0d0;
+   /* background-color: linear-gradient(#ffffff, #cccccc);*/
+
 
 }
