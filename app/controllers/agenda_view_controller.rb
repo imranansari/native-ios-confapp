@@ -9,13 +9,20 @@ class AgendaViewController < UIViewController
 
     @data = {}
 
-    segmentedControlAppearance = SDSegmentedControl.appearance
+    segmentViewAppearance = SDSegmentView.appearance
+    segmentViewAppearance.setTitleColor(String.new("c60813").to_color, forState:UIControlStateNormal)
+    segmentViewAppearance.setTitleColor(UIColor.whiteColor, forState:UIControlStateSelected)
 
-=begin
-    segmentedControlAppearance.backgroundColor = UIColor.redColor
-    segmentedControlAppearance.borderColor = UIColor.greenColor
-=end
+
+    stainViewAppearance = SDStainView.appearance
+    stainViewAppearance.backgroundColor = String.new("ca1f1e").to_color
+    stainViewAppearance.shadowColor = String.new("8a1117").to_color
+    stainViewAppearance.shadowBlur = 5
+
+
+    segmentedControlAppearance = SDSegmentedControl.appearance
     segmentedControlAppearance.arrowSize = 8
+    #segmentedControlAppearance.backgroundColor = UIColor.greenColor
 
 
     App.delegate.backend.getObjectsAtPath("/api/session",
@@ -142,18 +149,18 @@ class AgendaViewController < UIViewController
     self.days_filter.removeSegmentAtIndex(0, animated: false)
     self.days_filter.removeSegmentAtIndex(0, animated: false)
 
-    @conference_data.array.each{ |conference|
+    @conference_data.array.each { |conference|
       puts conference.name
 
       startDate = parse(conference.dateStart)
       endDate = parse(conference.dateEnd)
 
-      secondsBetween =  endDate.timeIntervalSinceDate(startDate)
+      secondsBetween = endDate.timeIntervalSinceDate(startDate)
       numberOfDays = secondsBetween / 86400
       puts numberOfDays
 
       for i in 1..numberOfDays
-        dt =  startDate.delta(days:i)
+        dt = startDate.delta(days: i)
         puts dt
         self.days_filter.insertSegmentWithTitle(dt.string_with_format("MMM/dd"), atIndex: i+1, animated: true)
       end
@@ -192,7 +199,6 @@ class AgendaViewController < UIViewController
                                           end)
 
   end
-
 
 
   def parse(string)

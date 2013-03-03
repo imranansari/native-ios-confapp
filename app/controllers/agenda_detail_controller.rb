@@ -6,7 +6,7 @@ class AgendaDetailController < UIViewController
   outlet :session_desc, UITextView
 
   def viewDidLoad
-    self.title = self.model.title
+    #self.title = self.model.title
     self.session_desc.text = self.model.desc
 
 
@@ -82,7 +82,7 @@ class AgendaDetailController < UIViewController
 
   def download_file
 
-    url = NSURL.URLWithString("http://macbook.local:3000//MCoE.pdf")
+    url = NSURL.URLWithString("http://conf-app-api.herokuapp.com/mobiquity.pdf")
     request = NSURLRequest.requestWithURL(url)
 
     fileName = "MCoE.pdf/"
