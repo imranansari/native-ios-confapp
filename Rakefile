@@ -31,6 +31,7 @@ Motion::Project::App.setup do |app|
     pod 'SDWebImage'
     pod 'REComposeViewController', '~> 1.1'
     pod 'AFNetworking'
+    pod 'SVWebViewController'
     #pod 'Google-Maps-iOS-SDK', '~> 1.0.2'
   end
 

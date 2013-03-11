@@ -4,17 +4,27 @@ class SpeakerDetailController < UIViewController
 
   outlet :participant_bio, UITextView
   outlet :participant_detail_pic, UIImageView
-  outlet :participant_twitter, UILabel
+  #outlet :participant_twitter, UILabel
 
   def viewDidLoad
     #self.title = self.model.name
     puts "test"
     puts self.model.bio
     puts self.model.pic_file_name
-    self.participant_twitter.text = "@iansari"
+    #self.participant_twitter.text = "@iansari"
     self.participant_bio.text = self.model.bio
     self.participant_detail_pic.setImageWithURL(self.model.pic_file_name)
 
+    self.view.updateStyles
+
+  end
+
+
+  def showTwitterProfile
+    puts "aloo"
+
+    webViewController = SVWebViewController.alloc.initWithAddress("https://mobile.twitter.com/lrz")
+    self.navigationController.pushViewController(webViewController, animated:true)
   end
 
 end

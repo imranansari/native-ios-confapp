@@ -10,19 +10,19 @@ class AgendaViewController < UIViewController
     @data = {}
 
     segmentViewAppearance = SDSegmentView.appearance
-    segmentViewAppearance.setTitleColor(String.new("c60813").to_color, forState:UIControlStateNormal)
+    segmentViewAppearance.setTitleColor(String.new("ba0611").to_color, forState:UIControlStateNormal)
     segmentViewAppearance.setTitleColor(UIColor.whiteColor, forState:UIControlStateSelected)
 
 
     stainViewAppearance = SDStainView.appearance
-    stainViewAppearance.backgroundColor = String.new("e86666").to_color
+    stainViewAppearance.backgroundColor = String.new("ba0611").to_color
     stainViewAppearance.shadowColor = String.new("8a1117").to_color
-    stainViewAppearance.shadowBlur = 3
+    stainViewAppearance.shadowBlur = 5
 
 
     segmentedControlAppearance = SDSegmentedControl.appearance
     segmentedControlAppearance.arrowSize = 8
-    segmentedControlAppearance.backgroundColor = String.new("e86666").to_color
+    segmentedControlAppearance.backgroundColor = String.new("42484e").to_color
 
 
     App.delegate.backend.getObjectsAtPath("/api/session",

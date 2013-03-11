@@ -30,16 +30,17 @@
 }*/
 
 #nav_bar {
-    /*  background-color: linear-gradient(top, #661827, #882033);*/
-    background-color: #c60813;
+    background-color: #88030a;
+    /*background-image: url(CustomNavBG@2x.png);*/
+  /*  opacity: 0.1;*/
     /*border-width: 1px;*/
     /*border-color: #98002E;*/
-    /*border-radius: 5px;*/
+/*    border-radius: 5px;*/
     /*box-shadow : inset 0 1px 4px rgb(114,115,116), 0 1px 1px rgba(255,255,255,0.2);*/
 }
 
 #nav_bar nav-buttons {
-    background-color: #9b1516
+    background-color: #861417
 }
 
 #textView {
@@ -53,23 +54,38 @@
 }
 
 #speakerPic {
-/*    border-width: 5px;
-    border-color: white;
-    border-radius: 5px;*/
-    box-shadow: 5 5 5;
+    /*    border-width: 5px;
+        border-color: white;
+        border-radius: 5px;*/
+    box-shadow: 3 3 3;
 }
 
-/*#speakerDetailPic {
-    #box-shadow: 5 5 5;
+#speakerDetailPic {
+    box-shadow: 5 5 5;
     border-width: 5px;
     border-color: grey;
     border-radius: 5px;
-}*/
+}
+
+#t12 {
+    border-color: green;
+    border-width: 5px;
+    opacity: 0.5;
+    background-size: 60px 60px;
+    border-radius: 5px;
+}
 
 #agendaTable table-view-headerfooter-view {
     /*background-color: #e86666;*/
-   background-color: #d0d0d0;
-   /* background-color: linear-gradient(#ffffff, #cccccc);*/
-
-
+    /*background-color: #d0d0d0;*/
+    background-color: #bababa;
+    /* background-color: linear-gradient(#ffffff, #cccccc);*/
 }
+
+/*
+#appButton {
+    border-width: 1px;
+    border-color: #84a254;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 4px rgb(114, 115, 116), 0 1px 1px rgba(255, 255, 255, 0.2);
+}*/
